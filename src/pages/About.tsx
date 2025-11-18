@@ -6,7 +6,7 @@ import { Calendar, MapPin, Code, Zap } from 'lucide-react';
 export const About = () => {
   const timeline = [
     {
-      year: '2023 - Present',
+      year: '2024 - Present',
       title: 'Freelance DevOps & Cloud Engineer',
       company: 'Self-Employed',
       description:
@@ -14,11 +14,10 @@ export const About = () => {
       icon: Code,
     },
     {
-      year: '2019 - 2023',
-      title: 'Computer Science Graduate',
-      company: 'CVR College Of Engineering',
-      description:
-        "Bachelor's degree with focus on software engineering and cloud computing.",
+      year: '2020 - 2024',
+      title: 'Electronics And Communication Graduate',
+      company: 'Anil Neerukonda Institute of Technology and Sciences',
+      description: "Bachelor's degree with focus on software engineering ",
       icon: Calendar,
     },
   ];
@@ -123,9 +122,7 @@ export const About = () => {
                   </div>
                   <div className='flex items-center justify-between'>
                     <span className='text-neutral-400'>Cloud Platforms</span>
-                    <span className='text-primary-500 font-mono'>
-                      AWS, Azure
-                    </span>
+                    <span className='text-primary-500 font-mono'>AWS</span>
                   </div>
                   <div className='flex items-center justify-between'>
                     <span className='text-neutral-400'>Projects</span>
@@ -136,7 +133,7 @@ export const About = () => {
                   <div className='flex items-center justify-between'>
                     <span className='text-neutral-400'>Technologies</span>
                     <span className='text-primary-500 font-mono'>
-                      19+ mastered
+                      10+ mastered
                     </span>
                   </div>
                 </div>

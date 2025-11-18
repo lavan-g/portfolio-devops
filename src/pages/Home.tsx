@@ -8,9 +8,9 @@ import { HERO_CONTENT, SKILLS, PROJECTS } from '../data/portfolio';
 export const Home = () => {
   const stats = [
     { label: 'Years Experience', value: '1+' },
-    { label: 'Cloud Platforms', value: '3' },
-    { label: 'Projects Completed', value: '10+' },
-    { label: 'Technologies', value: '19+' },
+    { label: 'Cloud Platforms', value: '1' },
+    { label: 'Projects Completed', value: '5+' },
+    { label: 'Technologies', value: '10+' },
   ];
 
   const featuredSkills = SKILLS.slice(0, 6);
@@ -202,7 +202,7 @@ export const Home = () => {
                 Start a Project
               </Link>
               <a
-                href='https://github.com/g-lavan'
+                href='https://github.com/lavan-g/portfolio-devops'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='inline-flex items-center justify-center px-8 py-4 border-2 border-neutral-600 text-neutral-200 hover:border-primary-500 hover:text-primary-500 font-semibold rounded-lg transition-all duration-200'
