@@ -61,21 +61,18 @@ export const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(
-        'http://<YOUR_BACKEND_PUBLIC_IP>:5000/send-email',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            subject: formData.subject,
-            message: formData.message,
-          }),
+      const response = await fetch('http://185.197.194.8:5000/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-      );
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
 
       const data = await response.json();
 
