@@ -61,7 +61,7 @@ export const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('http://185.197.194.8:5000/send-email', {
+      const response = await fetch('https://eo82k4zs4dqpfy0.m.pipedream.net', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -74,18 +74,18 @@ export const Contact = () => {
         }),
       });
 
-      const data = await response.json();
-
       if (response.ok) {
         setIsSubmitted(true);
+        // Show popup confirmation
+        alert('Message sent successfully!');
 
-        // Reset form after success
+        // Reset form and hide success state after a short delay
         setTimeout(() => {
           setIsSubmitted(false);
           setFormData({ name: '', email: '', subject: '', message: '' });
         }, 3000);
       } else {
-        alert('Failed to send message: ' + data.error);
+        alert('Failed to send message. Please try again.');
       }
     } catch (err) {
       console.error(err);

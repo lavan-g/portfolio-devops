@@ -13,6 +13,9 @@ export const Home = () => {
     { label: 'Technologies', value: '10+' },
   ];
 
+  const RESUME_URL =
+    'https://drive.google.com/file/d/1KHc7i1CXCQTRRTpnc4ZDDicrKQgJIy8J/view?usp=drive_link'; // TODO: replace with your actual public Google Drive resume URL
+
   const featuredSkills = SKILLS.slice(0, 6);
 
   return (
@@ -65,13 +68,15 @@ export const Home = () => {
                 <Code2 className='mr-2 h-5 w-5 group-hover:scale-110 transition-transform' />
                 View Projects
               </Link>
-              <Link
-                to='/contact'
-                className='group inline-flex items-center px-8 py-4 border-2 border-neutral-600 bg-neutral-800 text-neutral-200 hover:border-primary-500 hover:text-primary-500 transition-all duration-200 font-semibold tracking-wide rounded-lg'
+              <a
+                href={RESUME_URL}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='group inline-flex items-center px-8 py-4 border-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-bg-surface transition-all duration-200 font-semibold tracking-wide rounded-lg shadow-glow hover:shadow-card-hover'
               >
                 <ExternalLink className='mr-2 h-5 w-5 group-hover:scale-110 transition-transform' />
-                Contact Me
-              </Link>
+                View Resume
+              </a>
             </motion.div>
           </motion.div>
         </div>
