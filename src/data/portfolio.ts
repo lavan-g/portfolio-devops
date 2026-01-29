@@ -60,12 +60,18 @@ export const SKILLS = [
     category: 'devops',
     level: 90,
   },
-  // {
-  //   name: 'Jenkins',
-  //   icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-plain.svg',
-  //   category: 'devops',
-  //   level: 90,
-  // },
+  {
+    name: 'Pipedream',
+    icon: 'https://logo.svgcdn.com/logos/pipedream.svg',
+    category: 'devops',
+    level: 90,
+  },
+  {
+    name: 'Jenkins',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-plain.svg',
+    category: 'devops',
+    level: 50,
+  },
   {
     name: 'GitHub Actions',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',

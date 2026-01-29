@@ -6,18 +6,34 @@ import { Calendar, MapPin, Code, Zap } from 'lucide-react';
 export const About = () => {
   const timeline = [
     {
-      year: '2024 - Present',
-      title: 'Freelance DevOps & Cloud Engineer',
-      company: 'Self-Employed',
-      description:
-        'Working on freelance projects focusing on cloud automation, CI/CD, and container orchestration using AWS, Docker, and Kubernetes.',
+      year: 'Aug 2025 - Present',
+      title: 'DevOps Engineer',
+      company: 'FSADP',
       icon: Code,
+      bullets: [
+        'Architected, deployed, and managed scalable CI/CD pipelines for Next.js, React, Node.js, and Java (Spring Boot) applications using GitHub Actions and Jenkins.',
+        'Designed Jenkins pipelines for Java-based applications including build, test, artifact versioning, and Docker image creation, enabling reliable and repeatable deployments.',
+        'Containerized diverse application stacks (JavaScript & Java) using Docker, ensuring environment consistency across development, staging, and production.',
+        'Implemented Disaster Recovery (DR) strategies, including automated database and artifact backups, versioned Docker images, and rollback mechanisms to minimize downtime during failures.',
+        'Followed industry-standard DevOps practices such as infrastructure versioning, secure secret management, environment isolation, routine backup validation and ensuring 99.9% application uptime through proactive monitoring and pipeline validations.',
+      ],
+    },
+    {
+      year: 'Feb 2025 - July 2025',
+      title: 'Customer Success Engineer',
+      company: 'dflow.sh (Internship)',
+      icon: Code,
+      bullets: [
+        'Resolved complex deployment and configuration issues for customers using dFlow.sh self-hosted PaaS, focusing on Docker-based containerization and Node.js/React environments.',
+        'Acted as the primary technical point of contact for production-level issues, maintain SLAs, reducing Mean Time to Recovery (MTTR) by providing real-time log analysis and root-cause diagnostics.',
+        'Provided daily analytics and user metrics to improve the product using tools like Plausible, Metabase and Backoffice admin panel.',
+      ],
     },
     {
       year: '2020 - 2024',
       title: 'Electronics And Communication Graduate',
       company: 'Anil Neerukonda Institute of Technology and Sciences',
-      description: "Bachelor's degree with focus on software engineering ",
+      description: "Bachelor's degree with focus on software engineering.",
       icon: Calendar,
     },
   ];
@@ -224,9 +240,17 @@ export const About = () => {
                         <div className='text-primary-500 font-medium mb-3'>
                           {item.company}
                         </div>
-                        <p className='text-neutral-400 text-sm leading-relaxed'>
-                          {item.description}
-                        </p>
+                        {'bullets' in item && item.bullets ? (
+                          <ul className='text-neutral-400 text-sm leading-relaxed space-y-2 list-disc list-inside'>
+                            {item.bullets.map((bullet, i) => (
+                              <li key={i}>{bullet}</li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <p className='text-neutral-400 text-sm leading-relaxed'>
+                            {item.description}
+                          </p>
+                        )}
                       </div>
                     </div>
                   </motion.div>
