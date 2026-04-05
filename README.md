@@ -34,6 +34,7 @@ npm run build
 ## 🎨 Customization
 
 Update personal information in `src/data/portfolio.ts`:
+
 - Contact details
 - Skills and technologies
 - Project portfolio
@@ -46,4 +47,5 @@ Visit: [Your Live URL]
 ## 📄 License
 
 MIT License - feel free to use this template for your own portfolio!
+
 # portfolio

@@ -29,15 +29,15 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className='min-h-screen bg-bg-page text-neutral-200 font-sans'>
+      <div className="min-h-screen bg-bg-page font-sans text-neutral-200">
         <Navbar />
-        <main className='pt-16'>
+        <main className="pt-16">
           <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/skills' element={<Skills />} />
-            <Route path='/projects' element={<Projects />} />
-            <Route path='/contact' element={<Contact />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
         <Footer />

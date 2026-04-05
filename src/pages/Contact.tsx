@@ -153,32 +153,32 @@ export const Contact = () => {
   ];
 
   return (
-    <div className='min-h-screen bg-bg-page'>
+    <div className="min-h-screen bg-bg-page">
       {/* Terminal Header */}
       <TerminalHeader
-        command='ping contact.server'
-        description='Establishing connection to communication endpoint'
+        command="ping contact.server"
+        description="Establishing connection to communication endpoint"
       />
 
-      <section className='py-24'>
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-          <div className='grid lg:grid-cols-12 gap-12'>
+      <section className="py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-12">
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className='lg:col-span-7'
+              className="lg:col-span-7"
             >
-              <div className='bg-bg-surface border border-neutral-700 rounded-xl p-8 shadow-card'>
-                <div className='mb-8'>
-                  <h2 className='font-mono text-2xl font-bold text-primary-500 mb-4'>
+              <div className="rounded-xl border border-neutral-700 bg-bg-surface p-8 shadow-card">
+                <div className="mb-8">
+                  <h2 className="mb-4 font-mono text-2xl font-bold text-primary-500">
                     Send Message
                   </h2>
-                  <div className='font-mono text-sm text-accent-500'>
+                  <div className="font-mono text-sm text-accent-500">
                     <span>$</span>
-                    <span className='text-primary-500 ml-2'>
+                    <span className="ml-2 text-primary-500">
                       cat message_template.txt
                     </span>
                   </div>
@@ -188,41 +188,41 @@ export const Contact = () => {
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className='text-center py-12'
+                    className="py-12 text-center"
                   >
                     <CheckCircle
                       size={64}
-                      className='text-primary-500 mx-auto mb-4'
+                      className="mx-auto mb-4 text-primary-500"
                     />
-                    <h3 className='font-mono text-xl font-semibold text-primary-500 mb-2'>
+                    <h3 className="mb-2 font-mono text-xl font-semibold text-primary-500">
                       Message Sent Successfully!
                     </h3>
                     <Typewriter
-                      text='> Message delivered. Expect response within 24 hours.'
+                      text="> Message delivered. Expect response within 24 hours."
                       delay={50}
-                      className='text-neutral-400 text-sm'
+                      className="text-sm text-neutral-400"
                     />
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleSubmit} className='space-y-6'>
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     {/* Name Field */}
                     <div>
-                      <label className='block font-mono text-sm text-accent-500 mb-2'>
-                        <span className='text-primary-500 mr-2'>&gt;</span>
+                      <label className="mb-2 block font-mono text-sm text-accent-500">
+                        <span className="mr-2 text-primary-500">&gt;</span>
                         name
                       </label>
                       <input
-                        type='text'
-                        name='name'
+                        type="text"
+                        name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className={`w-full bg-bg-elevated border ${
+                        className={`w-full border bg-bg-elevated ${
                           errors.name ? 'border-red-500' : 'border-neutral-700'
-                        } rounded-md px-4 py-3 text-neutral-200 placeholder-neutral-600 font-mono focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors`}
-                        placeholder='Your full name'
+                        } rounded-md px-4 py-3 font-mono text-neutral-200 placeholder-neutral-600 transition-colors focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500`}
+                        placeholder="Your full name"
                       />
                       {errors.name && (
-                        <p className='text-red-500 text-sm mt-2'>
+                        <p className="mt-2 text-sm text-red-500">
                           {errors.name}
                         </p>
                       )}
@@ -230,22 +230,22 @@ export const Contact = () => {
 
                     {/* Email Field */}
                     <div>
-                      <label className='block font-mono text-sm text-accent-500 mb-2'>
-                        <span className='text-primary-500 mr-2'>&gt;</span>
+                      <label className="mb-2 block font-mono text-sm text-accent-500">
+                        <span className="mr-2 text-primary-500">&gt;</span>
                         email
                       </label>
                       <input
-                        type='email'
-                        name='email'
+                        type="email"
+                        name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className={`w-full bg-bg-elevated border ${
+                        className={`w-full border bg-bg-elevated ${
                           errors.email ? 'border-red-500' : 'border-neutral-700'
-                        } rounded-md px-4 py-3 text-neutral-200 placeholder-neutral-600 font-mono focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors`}
-                        placeholder='your.email@example.com'
+                        } rounded-md px-4 py-3 font-mono text-neutral-200 placeholder-neutral-600 transition-colors focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500`}
+                        placeholder="your.email@example.com"
                       />
                       {errors.email && (
-                        <p className='text-red-500 text-sm mt-2'>
+                        <p className="mt-2 text-sm text-red-500">
                           {errors.email}
                         </p>
                       )}
@@ -253,24 +253,24 @@ export const Contact = () => {
 
                     {/* Subject Field */}
                     <div>
-                      <label className='block font-mono text-sm text-accent-500 mb-2'>
-                        <span className='text-primary-500 mr-2'>&gt;</span>
+                      <label className="mb-2 block font-mono text-sm text-accent-500">
+                        <span className="mr-2 text-primary-500">&gt;</span>
                         subject
                       </label>
                       <input
-                        type='text'
-                        name='subject'
+                        type="text"
+                        name="subject"
                         value={formData.subject}
                         onChange={handleChange}
-                        className={`w-full bg-bg-elevated border ${
+                        className={`w-full border bg-bg-elevated ${
                           errors.subject
                             ? 'border-red-500'
                             : 'border-neutral-700'
-                        } rounded-md px-4 py-3 text-neutral-200 placeholder-neutral-600 font-mono focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors`}
+                        } rounded-md px-4 py-3 font-mono text-neutral-200 placeholder-neutral-600 transition-colors focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500`}
                         placeholder="What's this about?"
                       />
                       {errors.subject && (
-                        <p className='text-red-500 text-sm mt-2'>
+                        <p className="mt-2 text-sm text-red-500">
                           {errors.subject}
                         </p>
                       )}
@@ -278,24 +278,24 @@ export const Contact = () => {
 
                     {/* Message Field */}
                     <div>
-                      <label className='block font-mono text-sm text-accent-500 mb-2'>
-                        <span className='text-primary-500 mr-2'>&gt;</span>
+                      <label className="mb-2 block font-mono text-sm text-accent-500">
+                        <span className="mr-2 text-primary-500">&gt;</span>
                         message
                       </label>
                       <textarea
-                        name='message'
+                        name="message"
                         value={formData.message}
                         onChange={handleChange}
                         rows={6}
-                        className={`w-full bg-bg-elevated border ${
+                        className={`w-full border bg-bg-elevated ${
                           errors.message
                             ? 'border-red-500'
                             : 'border-neutral-700'
-                        } rounded-md px-4 py-3 text-neutral-200 placeholder-neutral-600 font-mono focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors resize-none`}
-                        placeholder='Tell me about your project or inquiry...'
+                        } resize-none rounded-md px-4 py-3 font-mono text-neutral-200 placeholder-neutral-600 transition-colors focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500`}
+                        placeholder="Tell me about your project or inquiry..."
                       />
                       {errors.message && (
-                        <p className='text-red-500 text-sm mt-2'>
+                        <p className="mt-2 text-sm text-red-500">
                           {errors.message}
                         </p>
                       )}
@@ -303,21 +303,21 @@ export const Contact = () => {
 
                     {/* Submit Button */}
                     <button
-                      type='submit'
+                      type="submit"
                       disabled={isSubmitting}
-                      className={`w-full py-4 px-6 rounded-lg font-mono font-bold text-lg transition-all duration-200 ${
+                      className={`w-full rounded-lg px-6 py-4 font-mono text-lg font-bold transition-all duration-200 ${
                         isSubmitting
-                          ? 'bg-neutral-700 text-neutral-400 cursor-not-allowed'
-                          : 'bg-primary-500 text-bg-surface hover:bg-primary-700 shadow-glow hover:shadow-card-hover'
+                          ? 'cursor-not-allowed bg-neutral-700 text-neutral-400'
+                          : 'bg-primary-500 text-bg-surface shadow-glow hover:bg-primary-700 hover:shadow-card-hover'
                       }`}
                     >
                       {isSubmitting ? (
-                        <div className='flex items-center justify-center space-x-2'>
-                          <div className='w-5 h-5 border-2 border-neutral-400 border-t-transparent rounded-full animate-spin' />
+                        <div className="flex items-center justify-center space-x-2">
+                          <div className="h-5 w-5 animate-spin rounded-full border-2 border-neutral-400 border-t-transparent" />
                           <span>SENDING...</span>
                         </div>
                       ) : (
-                        <div className='flex items-center justify-center space-x-2'>
+                        <div className="flex items-center justify-center space-x-2">
                           <Send size={20} />
                           <span>[ SEND MESSAGE ]</span>
                         </div>
@@ -334,31 +334,31 @@ export const Contact = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className='lg:col-span-5 space-y-8'
+              className="space-y-8 lg:col-span-5"
             >
               {/* Contact Methods */}
-              <div className='bg-bg-elevated border border-neutral-700 rounded-xl p-6'>
-                <h3 className='font-mono text-lg font-semibold text-primary-500 mb-6'>
+              <div className="rounded-xl border border-neutral-700 bg-bg-elevated p-6">
+                <h3 className="mb-6 font-mono text-lg font-semibold text-primary-500">
                   Contact Methods
                 </h3>
-                <div className='space-y-4'>
+                <div className="space-y-4">
                   {contactMethods.map((method) => {
                     const IconComponent = method.icon;
                     return (
                       <div
                         key={method.label}
-                        className='flex items-center space-x-4'
+                        className="flex items-center space-x-4"
                       >
                         <div
-                          className={`p-3 bg-bg-surface rounded-lg ${method.color}`}
+                          className={`rounded-lg bg-bg-surface p-3 ${method.color}`}
                         >
                           <IconComponent size={20} />
                         </div>
                         <div>
-                          <div className='font-medium text-neutral-200'>
+                          <div className="font-medium text-neutral-200">
                             {method.label}
                           </div>
-                          <div className='text-sm text-neutral-400'>
+                          <div className="text-sm text-neutral-400">
                             {method.value}
                           </div>
                         </div>
@@ -369,42 +369,42 @@ export const Contact = () => {
               </div>
 
               {/* Availability Status */}
-              <div className='bg-bg-elevated border border-neutral-700 rounded-xl p-6'>
-                <h3 className='font-mono text-lg font-semibold text-primary-500 mb-6'>
+              <div className="rounded-xl border border-neutral-700 bg-bg-elevated p-6">
+                <h3 className="mb-6 font-mono text-lg font-semibold text-primary-500">
                   Availability Status
                 </h3>
-                <div className='space-y-4'>
-                  <div className='flex items-center space-x-3'>
-                    <div className='w-3 h-3 bg-primary-500 rounded-full animate-pulse' />
-                    <span className='font-mono text-sm text-neutral-200'>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="h-3 w-3 animate-pulse rounded-full bg-primary-500" />
+                    <span className="font-mono text-sm text-neutral-200">
                       Available for new projects
                     </span>
                   </div>
-                  <div className='text-sm text-neutral-400'>
-                    <div className='mb-2'>Response time: Within 24 hours</div>
+                  <div className="text-sm text-neutral-400">
+                    <div className="mb-2">Response time: Within 24 hours</div>
                     <div>Time zone: IST (UTC+5:30)</div>
                   </div>
                 </div>
               </div>
 
               {/* Social Links */}
-              <div className='bg-bg-elevated border border-neutral-700 rounded-xl p-6'>
-                <h3 className='font-mono text-lg font-semibold text-primary-500 mb-6'>
+              <div className="rounded-xl border border-neutral-700 bg-bg-elevated p-6">
+                <h3 className="mb-6 font-mono text-lg font-semibold text-primary-500">
                   Connect With Me
                 </h3>
-                <div className='grid grid-cols-3 gap-4'>
+                <div className="grid grid-cols-3 gap-4">
                   {socialLinks.map((link) => {
                     const IconComponent = link.icon;
                     return (
                       <a
                         key={link.name}
                         href={link.url}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className={`flex flex-col items-center p-4 bg-bg-surface rounded-lg text-neutral-400 ${link.color} transition-all duration-200 hover:scale-105 hover:shadow-card`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`flex flex-col items-center rounded-lg bg-bg-surface p-4 text-neutral-400 ${link.color} transition-all duration-200 hover:scale-105 hover:shadow-card`}
                       >
-                        <IconComponent size={24} className='mb-2' />
-                        <span className='text-xs font-mono'>{link.name}</span>
+                        <IconComponent size={24} className="mb-2" />
+                        <span className="font-mono text-xs">{link.name}</span>
                       </a>
                     );
                   })}
@@ -416,29 +416,29 @@ export const Contact = () => {
       </section>
 
       {/* Terminal-style footer message */}
-      <section className='py-24 bg-bg-elevated'>
-        <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
+      <section className="bg-bg-elevated py-24">
+        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className='bg-bg-surface border border-neutral-700 rounded-xl p-8 font-mono'
+            className="rounded-xl border border-neutral-700 bg-bg-surface p-8 font-mono"
           >
-            <div className='text-accent-500 mb-4'>
+            <div className="mb-4 text-accent-500">
               $ echo "Thank you for visiting!"
             </div>
-            <div className='space-y-2 text-neutral-200'>
+            <div className="space-y-2 text-neutral-200">
               <p>
                 I'm always interested in discussing new opportunities and
                 challenging projects.
               </p>
-              <p className='text-primary-500'>
+              <p className="text-primary-500">
                 Let's build something amazing together.
               </p>
             </div>
-            <div className='mt-6 pt-4 border-t border-neutral-700 text-sm text-neutral-400'>
-              <div className='flex items-center justify-center space-x-2'>
+            <div className="mt-6 border-t border-neutral-700 pt-4 text-sm text-neutral-400">
+              <div className="flex items-center justify-center space-x-2">
                 <ExternalLink size={16} />
                 <span>Connection established. Awaiting your message...</span>
               </div>

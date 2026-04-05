@@ -19,26 +19,26 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-bg-page/80 backdrop-blur-md border-b border-neutral-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+      <nav className="fixed left-0 right-0 top-0 z-50 border-b border-neutral-700 bg-bg-page/80 backdrop-blur-md">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex h-16 items-center justify-between">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-2 group">
-              <div className="text-primary-500 font-mono font-bold text-xl tracking-wide">
+            <Link to="/" className="group flex items-center space-x-2">
+              <div className="font-mono text-xl font-bold tracking-wide text-primary-500">
                 <span className="text-accent-500">&gt;</span>
-                <span className="group-hover:text-primary-500 transition-colors duration-200">
+                <span className="transition-colors duration-200 group-hover:text-primary-500">
                   _
                 </span>
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden items-center space-x-8 md:flex">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className="relative px-3 py-2 text-sm font-medium transition-all duration-200 group"
+                  className="group relative px-3 py-2 text-sm font-medium transition-all duration-200"
                 >
                   <span
                     className={`font-mono ${
@@ -65,7 +65,7 @@ export const Navbar = () => {
             <div className="md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-2 rounded-md text-neutral-200 hover:text-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors"
+                className="rounded-md p-2 text-neutral-200 transition-colors hover:text-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500"
                 aria-label="Toggle menu"
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -81,21 +81,23 @@ export const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-bg-elevated border-t border-neutral-700"
+            className="border-t border-neutral-700 bg-bg-elevated md:hidden"
           >
-            <div className="px-4 py-2 space-y-1">
+            <div className="space-y-1 px-4 py-2">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsOpen(false)}
-                  className={`flex items-center justify-between px-3 py-3 rounded-md text-base font-medium transition-all duration-200 ${
+                  className={`flex items-center justify-between rounded-md px-3 py-3 text-base font-medium transition-all duration-200 ${
                     isActive(item.path)
-                      ? 'text-primary-500 bg-bg-surface border-l-2 border-primary-500'
-                      : 'text-neutral-200 hover:text-primary-500 hover:bg-bg-surface'
+                      ? 'border-l-2 border-primary-500 bg-bg-surface text-primary-500'
+                      : 'text-neutral-200 hover:bg-bg-surface hover:text-primary-500'
                   }`}
                 >
-                  <span className="font-mono">$ {item.label.toLowerCase()}</span>
+                  <span className="font-mono">
+                    $ {item.label.toLowerCase()}
+                  </span>
                   <ChevronRight
                     size={16}
                     className={`transition-transform ${

@@ -12,9 +12,13 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', -apple-system, system-ui, sans-serif;
+  font-family:
+    'Inter',
+    -apple-system,
+    system-ui,
+    sans-serif;
   background-color: #000000;
-  color: #C5CDD3;
+  color: #c5cdd3;
   overflow-x: hidden;
 }
 
@@ -28,16 +32,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0A0E11;
+  background: #0a0e11;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00FF41;
+  background: #00ff41;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00CC33;
+  background: #00cc33;
 }
 
 /* Reduced Motion Support */
@@ -49,11 +53,11 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  
+
   .scanline {
     animation: none !important;
   }
-  
+
   .typewriter {
     animation: none !important;
   }
@@ -61,19 +65,21 @@ body {
 
 /* Selection Styling */
 ::selection {
-  background: #00FF41;
-  color: #0A0E11;
+  background: #00ff41;
+  color: #0a0e11;
 }
 
 ::-moz-selection {
-  background: #00FF41;
-  color: #0A0E11;
+  background: #00ff41;
+  color: #0a0e11;
 }
 
 /* Focus Styles */
 .focus\:ring-cyber:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00FF41, 0 0 16px rgba(0, 255, 65, 0.3);
+  box-shadow:
+    0 0 0 2px #00ff41,
+    0 0 16px rgba(0, 255, 65, 0.3);
 }
 
 /* Terminal Cursor */
@@ -81,7 +87,7 @@ body {
   display: inline-block;
   width: 2px;
   height: 1.2em;
-  background-color: #00FF41;
+  background-color: #00ff41;
   animation: blink 1s infinite;
 }
 
@@ -100,7 +106,7 @@ body {
 /* Glitch Effect */
 .glitch {
   position: relative;
-  color: #00FF41;
+  color: #00ff41;
 }
 
 .glitch::before,
@@ -115,30 +121,44 @@ body {
 
 .glitch::before {
   animation: glitch-1 0.5s infinite;
-  color: #FF4757;
+  color: #ff4757;
   z-index: -1;
 }
 
 .glitch::after {
   animation: glitch-2 0.5s infinite;
-  color: #00D9FF;
+  color: #00d9ff;
   z-index: -2;
 }
 
 @keyframes glitch-1 {
-  0%, 14%, 15%, 49%, 50%, 99%, 100% {
+  0%,
+  14%,
+  15%,
+  49%,
+  50%,
+  99%,
+  100% {
     transform: translate(0);
   }
-  15%, 49% {
+  15%,
+  49% {
     transform: translate(-2px, 2px);
   }
 }
 
 @keyframes glitch-2 {
-  0%, 20%, 21%, 62%, 63%, 99%, 100% {
+  0%,
+  20%,
+  21%,
+  62%,
+  63%,
+  99%,
+  100% {
     transform: translate(0);
   }
-  21%, 62% {
+  21%,
+  62% {
     transform: translate(2px, -2px);
   }
 }
@@ -155,7 +175,8 @@ body {
 
 /* Floating Particles Animation */
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(0deg);
     opacity: 0.3;
   }

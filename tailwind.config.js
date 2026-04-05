@@ -80,15 +80,15 @@ module.exports = {
         glow: '0 0 16px rgba(0, 255, 65, 0.3)',
       },
       keyframes: {
-        'typewriter': {
+        typewriter: {
           from: { width: '0' },
           to: { width: '100%' },
         },
-        'blink': {
+        blink: {
           '0%, 50%': { opacity: '1' },
           '51%, 100%': { opacity: '0' },
         },
-        'glitch': {
+        glitch: {
           '0%': { transform: 'translate(0)' },
           '20%': { transform: 'translate(-2px, 2px)' },
           '40%': { transform: 'translate(-2px, -2px)' },
@@ -96,18 +96,18 @@ module.exports = {
           '80%': { transform: 'translate(2px, -2px)' },
           '100%': { transform: 'translate(0)' },
         },
-        'scanline': {
+        scanline: {
           '0%': { transform: 'translateY(-100%)' },
           '100%': { transform: 'translateY(100vh)' },
         },
       },
       animation: {
-        'typewriter': 'typewriter 2s steps(40, end)',
-        'blink': 'blink 1s infinite',
-        'glitch': 'glitch 0.3s ease-in-out',
-        'scanline': 'scanline 8s linear infinite',
+        typewriter: 'typewriter 2s steps(40, end)',
+        blink: 'blink 1s infinite',
+        glitch: 'glitch 0.3s ease-in-out',
+        scanline: 'scanline 8s linear infinite',
       },
     },
   },
   plugins: [],
-}
+};

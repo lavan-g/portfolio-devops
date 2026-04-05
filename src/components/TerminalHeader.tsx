@@ -6,15 +6,18 @@ interface TerminalHeaderProps {
   description?: string;
 }
 
-export const TerminalHeader = ({ command, description }: TerminalHeaderProps) => {
+export const TerminalHeader = ({
+  command,
+  description,
+}: TerminalHeaderProps) => {
   return (
-    <div className="bg-bg-elevated border-b border-neutral-700 relative overflow-hidden">
+    <div className="relative overflow-hidden border-b border-neutral-700 bg-bg-elevated">
       {/* Scanline effect */}
       <div className="absolute inset-0 opacity-10">
-        <div className="h-full bg-gradient-to-b from-transparent via-primary-500/20 to-transparent scanline" />
+        <div className="scanline h-full bg-gradient-to-b from-transparent via-primary-500/20 to-transparent" />
       </div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
+
+      <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -23,28 +26,28 @@ export const TerminalHeader = ({ command, description }: TerminalHeaderProps) =>
         >
           {/* Command */}
           <div className="font-mono text-2xl lg:text-3xl">
-            <span className="text-accent-500 mr-3">$</span>
+            <span className="mr-3 text-accent-500">$</span>
             <Typewriter text={command} delay={30} />
             <span className="terminal-cursor ml-1" />
           </div>
-          
+
           {/* Description */}
           {description && (
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="text-neutral-400 text-sm max-w-2xl"
+              className="max-w-2xl text-sm text-neutral-400"
             >
               {description}
             </motion.p>
           )}
-          
+
           {/* Terminal prompt symbols */}
-          <div className="flex items-center space-x-2 mt-6">
-            <div className="w-3 h-3 rounded-full bg-red-500" />
-            <div className="w-3 h-3 rounded-full bg-yellow-500" />
-            <div className="w-3 h-3 rounded-full bg-primary-500" />
+          <div className="mt-6 flex items-center space-x-2">
+            <div className="h-3 w-3 rounded-full bg-red-500" />
+            <div className="h-3 w-3 rounded-full bg-yellow-500" />
+            <div className="h-3 w-3 rounded-full bg-primary-500" />
           </div>
         </motion.div>
       </div>

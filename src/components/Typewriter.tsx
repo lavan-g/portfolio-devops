@@ -7,15 +7,19 @@ interface TypewriterProps {
   className?: string;
 }
 
-export const Typewriter = ({ text, delay = 50, className = '' }: TypewriterProps) => {
+export const Typewriter = ({
+  text,
+  delay = 50,
+  className = '',
+}: TypewriterProps) => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     if (currentIndex < text.length) {
       const timeout = setTimeout(() => {
-        setDisplayText(prev => prev + text[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
+        setDisplayText((prev) => prev + text[currentIndex]);
+        setCurrentIndex((prev) => prev + 1);
       }, delay);
 
       return () => clearTimeout(timeout);
@@ -29,7 +33,7 @@ export const Typewriter = ({ text, delay = 50, className = '' }: TypewriterProps
         <motion.span
           animate={{ opacity: [1, 0] }}
           transition={{ duration: 0.5, repeat: Infinity }}
-          className="inline-block w-0.5 h-5 bg-primary-500 ml-1"
+          className="ml-1 inline-block h-5 w-0.5 bg-primary-500"
         />
       )}
     </span>
