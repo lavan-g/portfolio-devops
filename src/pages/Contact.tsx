@@ -61,6 +61,18 @@ export const Contact = () => {
     setIsSubmitting(true);
 
     try {
+      const ownerNotificationSubject = `${formData.name} has reached out to you from your contact form`;
+      const ownerNotificationText = [
+        `${formData.name} has reached out to you from your contact form.`,
+        '',
+        `Client Name: ${formData.name}`,
+        `Client Email: ${formData.email}`,
+        `Subject: ${formData.subject}`,
+        '',
+        'Message:',
+        formData.message,
+      ].join('\n');
+
       const response = await fetch('https://eo82k4zs4dqpfy0.m.pipedream.net', {
         method: 'POST',
         headers: {
@@ -71,6 +83,11 @@ export const Contact = () => {
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
+          ownerNotification: {
+            to: CONTACT.email,
+            subject: ownerNotificationSubject,
+            text: ownerNotificationText,
+          },
         }),
       });
 
