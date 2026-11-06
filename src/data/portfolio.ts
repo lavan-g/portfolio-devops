@@ -273,7 +273,7 @@ export const PROJECTS = [
     ],
     category: 'fullstack',
     githubLink: 'https://github.com/g-lavan/portfolio',
-    websiteLink: 'https://glavan.online/',
+    websiteLink: 'https://portfolio-lavan.vercel.app/',
   },
 ];
 
